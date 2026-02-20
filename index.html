@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRENDS GMK Mall</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f8efe5;
+  color:#2b2b2b;
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:#f8efe5;
+  letter-spacing:2px;
+}
+
+nav a{
+  color:#f8efe5;
+  text-decoration:none;
+  margin-left:20px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#6a0dad;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:48px;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:18px;
+}
+
+.btn{
+  margin-top:20px;
+  padding:12px 30px;
+  background:#4b5d3b;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#6a0dad;
+}
+
+/* PRODUCTS */
+section{
+  padding:60px 20px;
+  text-align:center;
+}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.card h3{
+  margin:15px 0 5px 0;
+}
+
+.price{
+  color:#6a0dad;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+/* CONTACT */
+.contact{
+  background:#3b2f2f;
+  color:white;
+  padding:50px 20px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* FADE ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TRENDS GMK Mall</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Luxury Fashion Experience</h1>
+  <p>Premium Collection in Bhandara</p>
+  <a href="#products" class="btn">Explore Collection</a>
+</div>
+
+<section id="products">
+  <h2 class="fade">Featured Collection</h2>
+
+  <div class="products">
+
+    <div class="card fade">
+      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+      <h3>Men's Chinos</h3>
+      <p class="price">₹699</p>
+    </div>
+
+    <div class="card fade">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+      <h3>Casual Shirt</h3>
+      <p class="price">₹999</p>
+    </div>
+
+    <div class="card fade">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+      <h3>Women's Kurti</h3>
+      <p class="price">₹799</p>
+    </div>
+
+    <div class="card fade">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
+      <h3>Denim Jeans</h3>
+      <p class="price">₹1199</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact fade">
+  <h2>Visit Our Store</h2>
+  <p>Shop no 36/2, Near Kukde Nursing Home</p>
+  <p>Santaji Nagar, Bhandara, Maharashtra 441904</p>
+  <p>📞 092265 43106</p>
+</section>
+
+<a href="https://wa.me/919226543106" class="whatsapp">💬</a>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
